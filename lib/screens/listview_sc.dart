@@ -1,3 +1,4 @@
+import 'package:components/screens/listview_sc-2.dart';
 import 'package:flutter/material.dart';
 
 class ListViewScreen extends StatelessWidget {
@@ -30,9 +31,13 @@ class ListViewScreen extends StatelessWidget {
           Icons.arrow_forward_ios_outlined,
           color: Colors.indigoAccent,
         ),
-        onTap: () => print('tab en ' + optionList[index]),
+        onTap: () {
+          final routeSelected =
+              MaterialPageRoute(builder: (context) => const ListViewScreen2());
+          Navigator.push(context, routeSelected);
+        },
       ),
-      separatorBuilder: ((_, __) => const Divider()),
+      separatorBuilder: (_, __) => const Divider(),
       itemCount: optionList.length,
     );
   }
