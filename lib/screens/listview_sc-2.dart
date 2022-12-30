@@ -1,3 +1,4 @@
+import 'package:components/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class ListViewScreen2 extends StatelessWidget {
@@ -23,12 +24,8 @@ class ListViewScreen2 extends StatelessWidget {
       ],
     ); */
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Componentes 2'),
-        elevation: 0,
-      ),
-      body: Center(
-          child: ListView.separated(
+      appBar: MyAppBar(appBar: AppBar(), title: 'List 2'),
+      body: ListView.separated(
         itemBuilder: (_, index) => ListTile(
             leading: const Icon(Icons.star),
             title: Text(optionList[index]),
@@ -41,7 +38,7 @@ class ListViewScreen2 extends StatelessWidget {
             }),
         separatorBuilder: ((_, __) => const Divider()),
         itemCount: optionList.length,
-      )),
+      ),
     );
   }
 }
