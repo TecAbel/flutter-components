@@ -23,9 +23,7 @@ class MyApp extends StatelessWidget {
         'home': ((context) => const MyHomePage(
               title: 'Home',
             )),
-        'listComponents': (BuildContext context) => ListView(
-              children: const [Text('ListRoute')],
-            )
+        'listComponents': (BuildContext context) => const ListViewScreen2()
       },
     );
   }

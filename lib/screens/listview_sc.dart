@@ -1,4 +1,4 @@
-import 'package:components/screens/listview_sc-2.dart';
+import 'package:components/screens/screens_index.dart';
 import 'package:flutter/material.dart';
 
 class ListViewScreen extends StatelessWidget {
@@ -32,9 +32,10 @@ class ListViewScreen extends StatelessWidget {
           color: Colors.indigoAccent,
         ),
         onTap: () {
-          final routeSelected =
+          /* final routeSelected =
               MaterialPageRoute(builder: (context) => const ListViewScreen2());
-          Navigator.push(context, routeSelected);
+          Navigator.push(context, routeSelected); */
+          Navigator.pushNamed(context, 'listComponents');
         },
       ),
       separatorBuilder: (_, __) => const Divider(),
