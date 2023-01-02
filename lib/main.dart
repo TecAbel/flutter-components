@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:components/screens/screens_index.dart';
+import 'package:components/router/app_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,21 +18,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: 'home',
-      routes: {
-        'home': ((context) => const MyHomePage(
-              title: 'Home',
-            )),
-        'listComponents': (BuildContext context) => const ListViewScreen2(),
-        'alert': ((context) => const AlertScreen())
-      },
-      onGenerateRoute: ((settings) {
-        print(settings);
-        final routeErr = MaterialPageRoute(
-          builder: (context) => const AlertScreen(),
-        );
-        return routeErr;
-      }), // constrols a not found route and returns a widget route
+      initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.getAppRoutes(),
+      onGenerateRoute: AppRoutes
+          .onGenerateRoute, // constrols a not found route and returns a widget route
     );
   }
 }
