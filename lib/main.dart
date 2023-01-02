@@ -23,8 +23,16 @@ class MyApp extends StatelessWidget {
         'home': ((context) => const MyHomePage(
               title: 'Home',
             )),
-        'listComponents': (BuildContext context) => const ListViewScreen2()
+        'listComponents': (BuildContext context) => const ListViewScreen2(),
+        'alert': ((context) => const AlertScreen())
       },
+      onGenerateRoute: ((settings) {
+        print(settings);
+        final routeErr = MaterialPageRoute(
+          builder: (context) => const AlertScreen(),
+        );
+        return routeErr;
+      }), // constrols a not found route and returns a widget route
     );
   }
 }

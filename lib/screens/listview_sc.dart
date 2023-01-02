@@ -35,7 +35,7 @@ class ListViewScreen extends StatelessWidget {
           /* final routeSelected =
               MaterialPageRoute(builder: (context) => const ListViewScreen2());
           Navigator.push(context, routeSelected); */
-          Navigator.pushNamed(context, 'listComponents');
+          Navigator.pushNamed(context, 'cart');
         },
       ),
       separatorBuilder: (_, __) => const Divider(),
