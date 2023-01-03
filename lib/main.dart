@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:components/router/app_routes.dart';
+import 'package:components/config/config_index.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +16,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Components',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      // tema oscuro
+      darkTheme: AppTheme.darkTheme,
+      // tema light
+      theme: AppTheme.ligthTheme,
       initialRoute: AppRoutes.initialRoute,
       routes: AppRoutes.getAppRoutes(),
       onGenerateRoute: AppRoutes

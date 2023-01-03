@@ -1,3 +1,4 @@
+import 'package:components/config/config_index.dart';
 import 'package:components/router/app_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -29,7 +30,7 @@ class ListViewScreen extends StatelessWidget {
         title: Text(AppRoutes.menuOptions[index].name),
         leading: Icon(
           AppRoutes.menuOptions[index].icon,
-          color: Colors.indigoAccent,
+          color: AppTheme.primaryColor,
         ),
         onTap: () {
           /* final routeSelected =

@@ -1,4 +1,3 @@
-import 'package:components/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class AlertScreen extends StatelessWidget {
@@ -6,9 +5,10 @@ class AlertScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: MyAppBar(appBar: AppBar(), title: 'Alert'),
+    /* return Scaffold(
+      appBar: AppBar(),
       body: const Center(child: Text('AlertScreen')),
-    );
+    ); */
+    return const Text('AlertScreen');
   }
 }
