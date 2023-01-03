@@ -42,17 +42,14 @@ class AppRoutes {
     RouteOption(
       path: 'alert',
       name: 'Alerta',
-      screen: const MyHomePage(
-        title: 'Alerta!',
-        child: AlertScreen(),
-      ),
+      screen: const AlertScreen(),
       icon: Icons.add_alert_outlined,
     ),
     RouteOption(
       path: 'card',
       name: 'Card Widget',
       screen: const MyHomePage(
-        title: 'Alerta!',
+        title: 'Cards',
         child: CardScreen(),
       ),
       icon: Icons.credit_card,

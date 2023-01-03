@@ -1,4 +1,4 @@
-import 'package:components/config/config_index.dart';
+import 'package:components/widgets/widgets_index.dart';
 import 'package:flutter/material.dart';
 
 class CardScreen extends StatelessWidget {
@@ -14,16 +14,21 @@ class CardScreen extends StatelessWidget {
       children: [
         Column(
           children: const [
-            Card(
-              child: ListTile(
-                title: Text('Abel'),
-                subtitle: Text('Stefanini'),
-                leading: Icon(
-                  Icons.phone,
-                  color: AppTheme.primaryColor,
-                ),
-              ),
-            )
+            SimpleCardWidget(),
+            SizedBox(height: 20),
+            SimpleCard2(
+                name: 'Rick C137',
+                urlImage:
+                    'https://rickandmortyapi.com/api/character/avatar/1.jpeg'),
+            SizedBox(height: 20),
+            SimpleCard2(
+                name: 'Morty C137',
+                urlImage:
+                    'https://rickandmortyapi.com/api/character/avatar/2.jpeg'),
+            SizedBox(height: 20),
+            SimpleCard2(
+                urlImage:
+                    'https://rickandmortyapi.com/api/character/avatar/3.jpeg'),
           ],
         )
       ],
