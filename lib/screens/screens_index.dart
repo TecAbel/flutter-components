@@ -1,3 +1,4 @@
+export 'package:components/screens/inputs_sc.dart';
 export 'package:components/screens/animated_sc.dart';
 export 'package:components/screens/avatar_sc.dart';
 export 'package:components/screens/card_sc.dart';
