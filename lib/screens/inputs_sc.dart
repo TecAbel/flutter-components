@@ -7,7 +7,16 @@ class InputsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Inputs')),
-      body: const Center(child: Text('Inputs')),
+      body: SingleChildScrollView(
+          child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+        child: Column(children: [
+          TextFormField(
+            autofocus: true,
+            textCapitalization: TextCapitalization.words,
+          ),
+        ]),
+      )),
     );
   }
 }
