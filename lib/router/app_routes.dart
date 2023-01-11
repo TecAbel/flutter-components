@@ -54,6 +54,18 @@ class AppRoutes {
       ),
       icon: Icons.credit_card,
     ),
+    RouteOption(
+      path: 'avatar',
+      name: 'Avatar Screen',
+      icon: Icons.circle_rounded,
+      screen: const AvatarScreen(),
+    ),
+    RouteOption(
+      path: 'animated',
+      name: 'Animated Screen',
+      icon: Icons.play_circle_outlined,
+      screen: const AnimatedScreen(),
+    ),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
