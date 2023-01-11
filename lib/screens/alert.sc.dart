@@ -1,9 +1,41 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AlertScreen extends StatelessWidget {
   const AlertScreen({super.key});
 
-  void showAlertDialog(BuildContext context) {
+  void showAlertDialogIos(BuildContext context) {
+    showCupertinoDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (context) => CupertinoAlertDialog(
+        title: const Text('hi'),
+        content: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: const [
+            Text('Este es el contenido de la alerta'),
+            SizedBox(
+              height: 20,
+            ),
+            FlutterLogo(
+              size: 60,
+            )
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Cerrar'),
+          )
+        ],
+      ),
+    );
+  }
+
+  void showAlertDialogAndroid(BuildContext context) {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -15,23 +47,22 @@ class AlertScreen extends StatelessWidget {
           Icons.warning,
           color: Colors.red,
         ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Cerrar'),
+          )
+        ],
         content: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
-          children: [
-            const Text('Este es el contenido de la alerta'),
-            const SizedBox(
+          children: const [
+            Text('Este es el contenido de la alerta'),
+            SizedBox(
               height: 20,
             ),
-            Flex(
-              direction: Axis.horizontal,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                TextButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: const Text('Cerrar'),
-                )
-              ],
+            FlutterLogo(
+              size: 60,
             )
           ],
         ),
@@ -54,7 +85,9 @@ class AlertScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: () => showAlertDialog(context),
+              onPressed: () => Platform.isIOS
+                  ? showAlertDialogIos(context)
+                  : showAlertDialogAndroid(context),
               child: const Padding(
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 child: Text('Mostar alerta'),
