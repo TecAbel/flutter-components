@@ -25,6 +25,15 @@ class AppTheme {
         shape: const StadiumBorder(),
       ),
     ),
+    inputDecorationTheme: InputDecorationTheme(
+      border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+      floatingLabelStyle: const TextStyle(color: primaryColor),
+      focusedBorder: OutlineInputBorder(
+        borderSide: const BorderSide(color: primaryColor),
+        borderRadius: BorderRadius.circular(15),
+      ),
+      prefixIconColor: primaryColor,
+    ),
   );
 
   static final ThemeData darkTheme = ThemeData.dark().copyWith(
