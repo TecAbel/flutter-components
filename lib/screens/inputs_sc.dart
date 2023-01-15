@@ -59,12 +59,11 @@ class InputsScreen extends StatelessWidget {
                   child: Center(child: Text('Guardar')),
                 ),
                 onPressed: () {
-                  FocusScope.of(context).requestFocus(FocusNode());
+                  FocusManager.instance.primaryFocus?.unfocus();
                   if (!myFormKey.currentState!.validate()) {
                     print('formulario inválido');
                     return;
                   }
-
                   print(formValues);
                 },
               )
