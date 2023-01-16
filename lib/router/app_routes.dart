@@ -1,4 +1,5 @@
 import 'package:components/models/route_option.dart';
+import 'package:components/screens/slider_sc.dart';
 import 'package:flutter/material.dart';
 import 'package:components/screens/screens_index.dart';
 
@@ -71,6 +72,15 @@ class AppRoutes {
       name: 'Inputs Screen',
       icon: Icons.input_rounded,
       screen: const InputsScreen(),
+    ),
+    RouteOption(
+      path: 'slider',
+      name: 'Sliders and checks',
+      icon: Icons.slideshow,
+      screen: const MyHomePage(
+        title: 'SliderScreen',
+        child: SliderScreen(),
+      ),
     ),
   ];
 
