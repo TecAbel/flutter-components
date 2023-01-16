@@ -12,6 +12,7 @@ class InputsScreen extends StatelessWidget {
       'lastName': '',
       'email': '',
       'password': '',
+      'role': '',
     };
     return Scaffold(
       appBar: AppBar(title: const Text('Inputs')),
@@ -51,6 +52,23 @@ class InputsScreen extends StatelessWidget {
                 password: true,
                 controlName: 'password',
                 formValues: formValues,
+              ),
+              const SizedBox(height: 30),
+              DropdownButtonFormField(
+                value: 'user',
+                items: const [
+                  DropdownMenuItem(
+                    value: 'admin',
+                    child: Text('Admin'),
+                  ),
+                  DropdownMenuItem(
+                    value: 'user',
+                    child: Text('User'),
+                  ),
+                ],
+                onChanged: (value) {
+                  formValues['role'] = value ?? 'user';
+                },
               ),
               const SizedBox(height: 30),
               ElevatedButton(
