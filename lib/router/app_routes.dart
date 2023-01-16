@@ -1,5 +1,5 @@
 import 'package:components/models/route_option.dart';
-import 'package:components/screens/slider_sc.dart';
+import 'package:components/screens/listviewbuilder_sc.dart';
 import 'package:flutter/material.dart';
 import 'package:components/screens/screens_index.dart';
 
@@ -81,6 +81,12 @@ class AppRoutes {
         title: 'SliderScreen',
         child: SliderScreen(),
       ),
+    ),
+    RouteOption(
+      path: 'listviewbuilder',
+      name: 'ListViewBuilder',
+      icon: Icons.slideshow,
+      screen: const ListViewBuilderScreen(),
     ),
   ];
 
